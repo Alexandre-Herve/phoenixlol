@@ -1,7 +1,7 @@
 test:
   build:
     image: test
-    dockerfile: Dockerfile
+    dockerfile: Dockerfile-dev
 
   environment:
     MIX_ENV: "test"
