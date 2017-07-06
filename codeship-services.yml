@@ -1,0 +1,21 @@
+test:
+  build:
+    image: test
+    dockerfile: Dockerfile
+
+  environment:
+    MIX_ENV: "test"
+
+release:
+  build:
+    image: 383646808490.dkr.ecr.eu-west-1.amazonaws.com/test/phoenixlol
+    dockerfile: Dockerfile-prod
+  environment:
+    MIX_ENV: "prod"
+  encrypted_env_file: .env.encrypted
+
+
+aws_dockercfg:
+  image: codeship/aws-ecr-dockercfg-generator
+  add_docker: true
+  encrypted_env_file: .aws.env.encrypted

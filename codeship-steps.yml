@@ -1,0 +1,10 @@
+- name: test
+  service: test
+  command: mix test
+
+- service: release
+  type: push
+  tag: master
+  image_name: 383646808490.dkr.ecr.eu-west-1.amazonaws.com/test/phoenixlol
+  registry: https://383646808490.dkr.ecr.eu-west-1.amazonaws.com
+  dockercfg_service: aws_dockercfg
