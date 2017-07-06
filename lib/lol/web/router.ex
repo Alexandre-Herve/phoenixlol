@@ -7,5 +7,6 @@ defmodule Lol.Web.Router do
 
   scope "/api", Lol.Web do
     pipe_through :api
+    get "/ping", PingController, :ping
   end
 end
